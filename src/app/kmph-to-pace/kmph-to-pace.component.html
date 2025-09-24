@@ -1,22 +1,22 @@
-<div class="converter bg-gray-100 sm:mt-8">
+<div class="converter bg-gray-100 mt-4 p-5">
   <h1 class="text-2xl font-bold mb-4">Speed to Pace Converter</h1>
 
   <div class="grid grid-cols-2 gap-4 mb-4">
     <div class="input-group">
       <label for="speed" class="block mb-2 font-medium">Speed (km/h):</label>
       <input type="number" id="speed" [ngModel]="speedKmh()" (ngModelChange)="speedKmh.set($event)" min="1" max="30"
-        step="0.1" class="bg-blue-100 w-full p-2 border border-blue-800 text-blue-800 rounded">
+        step="0.1" class="bg-blue-100 w-full p-2 border-2 border-blue-500 text-blue-800 rounded">
 
     </div>
     <div class="input-group">
       <label for="pace" class="block mb-2 font-medium">Pace (min/km):</label>
       <input type="text" id="pace" [ngModel]="paceMinKm()" (ngModelChange)="onPaceChange($event)" placeholder="mm:ss"
-        pattern="[0-9]{1,2}:[0-5][0-9]" class="bg-blue-100 w-full p-2 border border-blue-800 text-blue-800 rounded">
+        pattern="[0-9]{1,2}:[0-5][0-9]" class="bg-blue-100 w-full p-2 border-2 border-blue-500 text-blue-700 rounded">
 
     </div>
   </div>
 
-  <input type="range" id="speed-slider" [ngModel]="speedKmh()" (ngModelChange)="speedKmh.set($event)" min="1" max="30"
+  <input type="range" id="speed-slider" [ngModel]="speedKmh()" (ngModelChange)="speedKmh.set($event)" min="5" max="30"
     step="0.1" class="w-full slider mb-5">
   <div class="common-speeds mb-6">
     <h3 class="font-medium mb-2">Choose speed</h3>
@@ -36,13 +36,13 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="text-lg">
-  
+
           <span class="text-2xl font-bold ">{{ speedKmh() | number:'1.1-1' }}</span> km/h
         </p>
       </div>
       <div>
         <p class="text-lg">
-     
+
           <span class="text-2xl font-bold ">{{ paceMinKm() }}</span> min/km
         </p>
       </div>
@@ -53,22 +53,22 @@
   <div class="race-times p-4 bg-orange-200 ">
     <div class="grid gap-y-1 gap-x-5 grid-cols-1 md:grid-cols-2">
       <div class="flex justify-between">
-        <span class="font-medium">Marathon:</span> {{ raceTimes().marathon }}
-      </div>
-      <div class="flex justify-between">
-        <span class="font-medium">30K:</span> {{ raceTimes().thirtyK }}
-      </div>
-      <div class="flex justify-between">
-        <span class="font-medium">Half Marathon:</span> {{ raceTimes().halfMarathon }}
-      </div>
-      <div class="flex justify-between">
-        <span class="font-medium">10 Miles:</span> {{ raceTimes().tenMiles }}
+        <span class="font-medium">5K:</span> {{ raceTimes().fiveK }}
       </div>
       <div class="flex justify-between">
         <span class="font-medium">10K:</span> {{ raceTimes().tenK }}
       </div>
       <div class="flex justify-between">
-        <span class="font-medium">5K:</span> {{ raceTimes().fiveK }}
+        <span class="font-medium">10EM:</span> {{ raceTimes().tenMiles }}
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">Half Marathon:</span> {{ raceTimes().halfMarathon }}
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">30K:</span> {{ raceTimes().thirtyK }}
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">Marathon:</span> {{ raceTimes().marathon }}
       </div>
     </div>
   </div>
