@@ -1,4 +1,4 @@
-<div class="converter bg-gray-100">
+<div class="converter bg-gray-100 sm:mt-8">
   <h1 class="text-2xl font-bold mb-4">Speed to Pace Converter</h1>
 
   <div class="grid grid-cols-2 gap-4 mb-4">
@@ -20,7 +20,7 @@
     step="0.1" class="w-full slider mb-5">
   <div class="common-speeds mb-6">
     <h3 class="font-medium mb-2">Choose speed</h3>
-    <div class="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+    <div class="grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
       @for (speed of commonSpeeds; track speed) {
       <button (click)="setCommonSpeed(speed)" [class.bg-blue-500]="activeSpeed() === speed"
         [class.text-white]="activeSpeed() === speed" [class.active-speed]="activeSpeed() === speed"
@@ -36,13 +36,13 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="text-lg">
-          <span class="font-medium">Speed </span>
+  
           <span class="text-2xl font-bold ">{{ speedKmh() | number:'1.1-1' }}</span> km/h
         </p>
       </div>
       <div>
         <p class="text-lg">
-          <span class="font-medium">Pace </span>
+     
           <span class="text-2xl font-bold ">{{ paceMinKm() }}</span> min/km
         </p>
       </div>
@@ -56,10 +56,10 @@
         <span class="font-medium">Marathon:</span> {{ raceTimes().marathon }}
       </div>
       <div class="flex justify-between">
-        <span class="font-medium">Half Marathon:</span> {{ raceTimes().halfMarathon }}
+        <span class="font-medium">30K:</span> {{ raceTimes().thirtyK }}
       </div>
       <div class="flex justify-between">
-        <span class="font-medium">30K:</span> {{ raceTimes().thirtyK }}
+        <span class="font-medium">Half Marathon:</span> {{ raceTimes().halfMarathon }}
       </div>
       <div class="flex justify-between">
         <span class="font-medium">10 Miles:</span> {{ raceTimes().tenMiles }}
