@@ -33,25 +33,20 @@
   </div>
 
   <h2 class="font-medium mb-2">Results</h2>
-  <div class="result p-4 bg-orange-200  mb-4">
-    <div class="grid grid-cols-2 gap-4">
+
+  <div class="race-times p-4 bg-orange-200 ">
+    <div class="grid grid-cols-2 gap-4 pb-3">
       <div>
         <p class="text-lg">
-
           <span class="text-2xl font-bold ">{{ speedKmh() | number:'1.1-1' }}</span> km/h
         </p>
       </div>
       <div>
         <p class="text-lg">
-
           <span class="text-2xl font-bold ">{{ paceMinKm() }}</span> min/km
         </p>
       </div>
     </div>
-  </div>
-
-
-  <div class="race-times p-4 bg-orange-200 ">
     <div class="grid gap-y-1 gap-x-5 grid-cols-1 md:grid-cols-2">
       <div class="flex justify-between">
         <span class="font-medium">1K:</span> {{ raceTimes().oneK }}
