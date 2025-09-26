@@ -5,8 +5,6 @@ import { KmphToPaceComponent } from "./kmph-to-pace/kmph-to-pace.component";
   selector: 'app-root',
   imports: [KmphToPaceComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pacer';
 }

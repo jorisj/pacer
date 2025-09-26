@@ -2,9 +2,6 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -22,22 +19,14 @@
   transition: background-color 0.2s ease;
 }
 
-.slider-container {
-  padding-top: 1rem;
-}
+
 
 .slider {
   -webkit-appearance: none;
   height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
-  outline: none;
   transition: all 0.2s ease;
 }
 
-.slider:hover {
-  background: #d1d5db;
-}
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -52,13 +41,11 @@
 
 .slider::-webkit-slider-thumb:hover {
   transform: scale(1.1);
-  background: #2563eb;
 }
 
 .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #3b82f6;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -66,21 +53,20 @@
 
 .slider::-moz-range-thumb:hover {
   transform: scale(1.1);
-  background: #2563eb;
-}
-
-.slider-value {
-  pointer-events: none;
-}
-
-.slider-value span {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 @keyframes quickPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .active-speed {
