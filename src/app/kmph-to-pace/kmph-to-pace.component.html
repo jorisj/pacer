@@ -1,17 +1,16 @@
-<div class="converter rounded bg-gray-100  p-5">
-
+<div class="converter rounded bg-gray-100 shadow p-5">
 
   <div class="grid grid-cols-2 gap-4 mb-4">
     <div class="input-group">
-      <label for="speed" class="block mb-2 font-medium">Speed (km/h):</label>
+      <label for="speed" class="block mb-2 font-medium">Speed <span class="text-xs text-gray-700">(km/h)</span></label>
       <input type="number" id="speed" [ngModel]="speedKmh()" (ngModelChange)="speedKmh.set($event)" min="1" max="30"
-        step="0.1" class="bg-blue-100 w-full p-2 border-2 border-blue-300 text-blue-800 rounded">
+        step="0.1" class="bg-blue-100 w-full p-2 border border-blue-800 text-blue-800 rounded">
     </div>
 
     <div class="input-group">
-      <label for="pace" class="block mb-2 font-medium">Pace (min/km):</label>
+      <label for="pace" class="block mb-2 font-medium">Pace <span class="text-xs text-gray-700">(min/km)</span></label>
       <input type="text" id="pace" [ngModel]="paceMinKm()" (ngModelChange)="onPaceChange($event)" placeholder="mm:ss"
-        pattern="[0-9]{1,2}:[0-5][0-9]" class="bg-blue-100 w-full p-2 border-2 border-blue-300 text-blue-700 rounded">
+        pattern="[0-9]{1,2}:[0-5][0-9]" class="bg-blue-100 w-full p-2 border border-blue-800 text-blue-800 rounded">
     </div>
   </div>
 
@@ -21,12 +20,12 @@
 
   <div class="common-speeds mb-6">
     <h3 class="font-medium mb-2">Choose speed</h3>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+    <div class="grid grid-cols-3 gap-2">
       @for (speed of commonSpeeds; track speed) {
       <button (click)="setCommonSpeed(speed)" [class.bg-blue-500]="activeSpeed() === speed"
         [class.text-white]="activeSpeed() === speed" [class.active-speed]="activeSpeed() === speed"
         class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition-all duration-300 ease-in-out text-center">
-        {{ speed }} km/h
+        <span>{{ speed }} </span>  <span class="text-sm">km/h</span> 
       </button>
       }
     </div>
@@ -34,20 +33,19 @@
 
   <h2 class="font-medium mb-2">Results</h2>
 
-  <div class="race-times p-4 bg-orange-200 ">
-    <div class="grid grid-cols-2 gap-4 pb-3">
-      <div>
-        <p class="text-lg">
-          <span class="text-xl font-bold ">{{ speedKmh() | number:'1.1-1' }}</span> km/h
-        </p>
-      </div>
-      <div>
-        <p class="text-lg">
-          <span class="text-xl font-bold ">{{ paceMinKm() }}</span> min/km
-        </p>
-      </div>
+  <div class="race-times p-4 bg-orange-200 text-orange-950 ">
+    <div class="grid grid-cols-2 gap-4 pb-2 border-b border-orange-950 mb-3">
+
+      <p class="text-lg text-center">
+        <span class="text-xl font-bold ">{{ speedKmh() | number:'1.1-1' }}</span> km/h
+      </p>
+
+      <p class="text-lg text-center">
+        <span class="text-xl font-bold">{{ paceMinKm() }}</span> min/km
+      </p>
+
     </div>
-    <div class="grid gap-y-1 gap-x-5 grid-cols-1 md:grid-cols-2">
+    <div class="grid gap-y-1 gap-x-5 grid-cols-1 sm:grid-cols-2">
       <div class="flex justify-between">
         <span class="font-medium">1K:</span> {{ raceTimes().oneK }}
       </div>

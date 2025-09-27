@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./kmph-to-pace.component.css']
 })
 export class KmphToPaceComponent {
-  public readonly commonSpeeds = [10, 11, 12, 13, 14, 15, 16, 20];
+  public readonly commonSpeeds = [10, 11, 12, 13, 14, 15, 16, 17, 20];
   public speedKmh = signal(10); // Default speed
 
   public paceMinKm = computed(() => this.calculatePace(this.speedKmh()));
