@@ -10,21 +10,21 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./kmph-to-pace.component.css']
 })
 export class KmphToPaceComponent {
-  public readonly commonSpeeds = [10, 11, 12, 13, 14, 15, 16, 17, 20];
+  public readonly commonSpeeds = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
   public speedKmh = signal(10); // Default speed
 
   public paceMinKm = computed(() => this.calculatePace(this.speedKmh()));
 
-  public raceTimes = computed(() => ({
-    oneK: this.calculateRaceTime(1),
-    marathon: this.calculateRaceTime(42.195),
-    halfMarathon: this.calculateRaceTime(21.0975),
-    thirtyK: this.calculateRaceTime(30),
-    tenMiles: this.calculateRaceTime(16.0934),
-    fifteen: this.calculateRaceTime(15),
-    tenK: this.calculateRaceTime(10),
-    fiveK: this.calculateRaceTime(5)
-  }));
+  public raceTimes = computed(() => ([
+    { label: 'Marathon', value: this.calculateRaceTime(42.195) },
+    { label: '30K', value: this.calculateRaceTime(30) },
+    { label: 'Half marathon', value: this.calculateRaceTime(21.0975) },
+    { label: '10M', value: this.calculateRaceTime(16.0934) },
+    { label: '15k', value: this.calculateRaceTime(15) },
+    { label: '10K', value: this.calculateRaceTime(10) },
+    { label: '5K', value: this.calculateRaceTime(5) },
+    { label: '1K', value: this.calculateRaceTime(1) },
+  ]));
 
   public activeSpeed = computed(() => {
     const current = this.speedKmh();
